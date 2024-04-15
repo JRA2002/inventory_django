@@ -1,11 +1,13 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1>Delete {{ object.name }}</h1><br>
+<div class="contanier mx-auto">
+    <h1>Delete {{ object.name }}</h1><br>
 <form action="#" method="post">
     {% csrf_token %}
-    <input type="submit" value="Confirm">
+    <input class="btn btn-primary" type="submit" value="Confirm">
     
 </form>
-<input type="submit" value="Cancel" action="{% url 'inventario' %}">
+</div>
+
 {% endblock %}

@@ -10,4 +10,6 @@ urlpatterns = [
     path('create_item/', CreateItemView.as_view(), name='create_item'),
     path('accounts/', include('django.contrib.auth.urls')),
     
+    
+    
 ]

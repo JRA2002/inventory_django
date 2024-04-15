@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-
+{% load static %}
 {% block content %}
 <h1 class="text-center p-2">Inventario</h1>
 <table class="table">
@@ -23,11 +23,11 @@
         <td>{{ item.category }}</td>
         <td>{{ item.unit }}</td>
         <td>{{ item.price }}</td>
-        <td><a href="{% url 'delete_item' item.id %}">Delete</a></td>
-        <td><a href="{% url 'update_item' item.id %}">Update</a></td>
+        <td><a class="btn btn-danger btn-sm" href="{% url 'delete_item' item.id %}">Delete</a></td>
+        <td><a class="btn btn-primary btn-sm" href="{% url 'update_item' item.id %}">Update</a></td>
       </tr>
     </tbody>
     {% endfor %}
-    <a href="{% url 'create_item' %}">Create</a>
+    <a class="btn btn-primary btn-sm" href="{% url 'create_item' %}">Create</a>
   </table>
 {% endblock %}

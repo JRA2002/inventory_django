@@ -1,17 +1,12 @@
 {% extends "base.html" %}
-
+{% load static %}
 {% block title %}Home{% endblock %}
 
 {% block content %}
-{% if user.is_authenticated %}
-Hi {{ user.username }}!
-<form action="{% url 'logout' %}" method="post">
-  {% csrf_token %}
-  <button type="submit">Log Out</button>
-</form>
-<h1>INVENTARIO</h1>
-{% else %}
-<p>You are not logged in</p>
-<a href="{% url 'login' %}">Log In</a>
-{% endif %}
+<h1>Home</h1>
+<div class="d-flex align-items-center p-4">
+  
+  <strong role="status">Loading...</strong>
+  <div class="spinner-border ms-auto" aria-hidden="true"></div>
+</div>
 {% endblock %}

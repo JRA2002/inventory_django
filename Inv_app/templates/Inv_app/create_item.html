@@ -1,14 +1,15 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1 class="text-center">Nuevo Item </h1><br>
+
 <div class="container mx-auto">
+    <h1 class="p-2">Nuevo Item </h1><br>
     <form action="#" method="post">
         {% csrf_token %}
         {{ form.as_p }}
-        <input type="submit" value="Create">
-        <input type="submit" value="Cancel" action="{% url 'inventario' %}">
-    
+        <input class="btn btn-primary" type="submit" value="Create">
+        <input class="btn btn-danger" type="submit" value="Cancel" action="{% url 'inventario' %}">
+        <button class="btn btn-danger" action="{% url 'inventario' %}">CANCEL</button>
     </form>
 </div>
 {% endblock %}

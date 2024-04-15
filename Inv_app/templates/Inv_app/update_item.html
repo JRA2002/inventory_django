@@ -1,13 +1,13 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1 class="text-center">Update Item</h1><br>
+
 <div class="container justify-content-center block">
+    <h1 class="p-2">Update Item</h1>
     <form action="#" method="post">
         {% csrf_token %}
         {{ form.as_p }}
-        <input type="submit" value="Update">
-        <input type="submit" value="Cancel" action="{% url 'inventario' %}">
+        <input class="btn btn-primary btn-sm" type="submit" value="Update">
     </form>
 </div>
 {% endblock %}
