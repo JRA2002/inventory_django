@@ -1,17 +1,33 @@
 {% extends 'base.html' %}
 
 {% block content %}
-{% for item in items %}
-<h2>{{ item.name }}</h2>
-<p>{{ item.description }}</p>
-<p>{{ item.quantity }}</p>
-<p>{{ item.company }}</p>
-<p>{{ item.category }}</p>
-<p>{{ item.unit }}</p>
-<p>{{ item.price }}</p>
-<p><a href="{% url 'delete_item' item.id %}">Delete</a></p>
-<p><a href="{% url 'update_item' item.id %}">Update</a></p>
-<hr>
-{% endfor %}
-<p><a href="{% url 'create_item' %}">Create</a></p>
+<h1 class="text-center p-2">Inventario</h1>
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Item</th>
+        <th scope="col">Quantity</th>
+        <th scope="col">Company</th>
+        <th scope="col">Category</th>
+        <th scope="col">Unit</th>
+        <th scope="col">Price</th>
+        <th scope="col text-center">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for item in items %}
+      <tr>
+        <td>{{ item.name }}</td>
+        <td>{{ item.quantity }}</td>
+        <td>{{ item.company }}</td>
+        <td>{{ item.category }}</td>
+        <td>{{ item.unit }}</td>
+        <td>{{ item.price }}</td>
+        <td><a href="{% url 'delete_item' item.id %}">Delete</a></td>
+        <td><a href="{% url 'update_item' item.id %}">Update</a></td>
+      </tr>
+    </tbody>
+    {% endfor %}
+    <a href="{% url 'create_item' %}">Create</a>
+  </table>
 {% endblock %}

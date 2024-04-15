@@ -1,11 +1,14 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1>Nuevo Item </h1><br>
-<form action="#" method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <input type="submit" value="Create">
-
-</form>
+<h1 class="text-center">Nuevo Item </h1><br>
+<div class="container mx-auto">
+    <form action="#" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Create">
+        <input type="submit" value="Cancel" action="{% url 'inventario' %}">
+    
+    </form>
+</div>
 {% endblock %}

@@ -20,8 +20,7 @@ CATEGORY = [
     ('Bebidas', 'Bebidas'),
 ]
 class Item(models.Model):
-    name = models.CharField(max_length=100)
-    description = models.TextField()
+    name = models.CharField(max_length=30)
     quantity = models.IntegerField()
     company = models.CharField(max_length=20)
     category = models.CharField(max_length=10,choices=CATEGORY,default='Lacteos')
